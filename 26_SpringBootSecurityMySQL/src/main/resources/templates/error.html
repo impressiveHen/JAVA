@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}"/>
+  <!--/*/ <th:block th:include="fragments/head :: head"/> /*/-->
+</head>
+<body>
+<form th:action="@{/login}" method="get">
+  <button class="btn btn-md btn-warning btn-block" type="Submit">Go To Login Page</button>
+</form>
+
+<div class="container">
+  <h1>Error occurred</h1>
+  <p>
+    An error has occurred. Please contact the administrator
+  </p>
+
+  <div sec:authorize="hasRole('ADMIN')">
+    You are Admin!
+  </div>
+
+  <div sec:authorize="hasRole('USER')">
+    You are user!
+  </div>
+</div>
+
+</body>
+</html>

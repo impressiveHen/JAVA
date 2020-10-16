@@ -1,0 +1,26 @@
+USE sql_java;
+
+DROP TABLE IF EXISTS user_role;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS roles;
+
+CREATE TABLE IF NOT EXISTS users(
+	user_id INT AUTO_INCREMENT PRIMARY KEY,
+	user_name VARCHAR(100),
+    email VARCHAR(50),
+    password VARCHAR(100),
+    first_name VARCHAR(100),
+    last_name VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS roles (
+	role_id INT AUTO_INCREMENT PRIMARY KEY,
+    role VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS user_role(
+	user_id INT,
+    role_id INT,
+    -- FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    FOREIGN KEY (role_id) REFERENCES roles (role_id) ON DELETE RESTRICT ON UPDATE CASCADE
+);

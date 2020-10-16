@@ -14,7 +14,7 @@ public class SecurityApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SecurityApplication.class, args);
-		logger.debug(new BCryptPasswordEncoder().encode("123"));
+		logger.error(new BCryptPasswordEncoder().encode("123"));
 	}
 
 }
