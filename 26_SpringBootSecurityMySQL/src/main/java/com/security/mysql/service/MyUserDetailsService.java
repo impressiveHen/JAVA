@@ -24,14 +24,10 @@ public class MyUserDetailsService implements UserDetailsService {
     @Autowired
     private UserService userService;
 
-    private final Logger logger = LoggerFactory.getLogger(MyAuthenticationSuccessHandler.class);
-
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         User user = userService.findUserByUserName(userName);
-
-        logger.error("MyUserDetailsService: " + userName);
 
         if (user == null) {
             throw new UsernameNotFoundException("User: " + userName + " is not registered");

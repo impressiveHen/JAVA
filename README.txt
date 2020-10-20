@@ -1,3 +1,7 @@
+17_SpringMockitoTest
+(1)@Captor, capture argument
+(2)Mockitr verify, never(), times(), thenReturn()
+
 25_SpringbootWebSecurity:
 (1) logback.xml, Logger 
 (2) Spring Security, InMemoryUserDetailsManager, Custom UserDetailsService
@@ -14,3 +18,4 @@ https://medium.com/@gustavo.ponce.ch/spring-boot-spring-mvc-spring-security-mysq
 (5) MyUserDetailsService with authorites
 (6) UserService save user
 (7) MyAuthenticationSuccessHandler to redirect different roles
+(8) Unit test UserService, Mockito @Before, setUp
